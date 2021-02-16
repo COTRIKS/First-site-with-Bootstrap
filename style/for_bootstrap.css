@@ -1,0 +1,1253 @@
+body::-webkit-scrollbar {
+    width: 11px;
+}
+body::-webkit-scrollbar-track {
+    background-color: white;
+}
+body::-webkit-scrollbar-thumb {
+    background-color: white;
+    border-radius: 20px;
+    border: 2px solid rgb(35, 37, 37);
+}
+body::-webkit-scrollbar-thumb:hover {
+    border: 2px solid rgb(26, 154, 158);
+}
+
+::selection {background-color: rgb(56, 56, 56); color: rgb(41, 195, 201);}
+::-moz-selection {background-color: rgb(56, 56, 56); color: rgb(41, 195, 201);}
+::-webkit-selection {background-color: rgb(56, 56, 56); color: rgb(41, 195, 201);}
+::-o-selection {background-color: rgb(56, 56, 56); color: rgb(41, 195, 201);}
+::-ms-selection {background-color: rgb(56, 56, 56); color: rgb(41, 195, 201);}
+
+.row > * {
+    text-align: center;
+}
+.fa-bus {
+    color: white;
+    margin-right: 10px;
+}
+.other {
+    border: none;
+    color: black;
+    position: relative;
+    transition: 0.7s ease-in-out;
+    overflow: hidden;
+}
+.other::before, 
+.other::after {
+    position: absolute;
+    content: '';
+    width: 100%;
+    height: 100%;
+    opacity: 0.5;
+    background-color: rgba(38, 46, 46, 0.8);
+    left: -100%;
+    top: 0;
+    transition: 0.2s ease-in-out;
+    z-index: -1;
+}
+.other::after {
+    opacity: 1;
+    transition-delay: 0.2s;
+}
+.other:hover {
+    color: white;
+    background: none;
+    border: none; 
+}
+.other:hover::before,
+.other:hover::after {
+    left: 0;
+}
+
+/*Прелоадер*/
+.preloader {
+    position: fixed;
+    z-index: 100;
+}
+.bg-color {
+    background: linear-gradient(to top, white, rgb(191, 191, 223));
+    z-index: 90;
+    width: 100vw;
+    height: 100vh;
+}
+.pre {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 5.7%;
+    height: 8.3%;
+}
+
+.bg-section > .center-block {
+    border: none;
+    background: rgba(255, 225, 141, 0.7);
+    height: auto;
+    color: black;
+}
+.bg-section > .col-lg-2 {
+    background-color: rgba(221, 221, 221, 0.5);
+    color: black;
+    border: none;
+    height: auto;
+    font-size: 25px;
+}
+.p {
+    font-size: 45px;
+    font-family: Arial, sans-serif;
+    font-weight: lighter;
+    text-transform: uppercase;
+    margin-top: 35px;
+    margin-bottom: 30px;
+}
+.p-slider {
+    font-size: 45px;
+    font-family: Arial, sans-serif;
+    font-weight: lighter;
+    text-transform: uppercase;
+    margin-top: 15px;
+    margin-bottom: 30px;
+}
+.card {
+    display: inline-flex;
+    margin-bottom: 15px;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+.card-title {
+    font-size: 25px;
+    font-family: Comic Sans, sans-serif;
+}
+.card-text {
+    font-size: 17px;
+    font-family: Comic Sans, sans-serif;
+}
+.card > img {
+    transition: 0.3s ease-in-out;
+}
+.card > img:hover {
+    transform: scale(1.1);
+    -webkit-box-shadow: 0px 2px 9px -1px rgba(135,135,135,1);
+    -moz-box-shadow: 0px 2px 9px -1px rgba(135,135,135,1);
+    -ms-box-shadow: 0px 2px 9px -1px rgba(135,135,135,1);
+    -o-box-shadow: 0px 2px 9px -1px rgba(135,135,135,1);
+    box-shadow: 0px 2px 9px -1px rgba(135,135,135,1);
+}
+.b-card:hover {
+    -webkit-box-shadow: 0px 0px 5px 1px rgba(56, 56, 56, 0.73);
+    -moz-box-shadow: 0px 0px 5px 1px rgba(56, 56, 56, 0.73);
+    -ms-box-shadow: 0px 0px 5px 1px rgba(56, 56, 56, 0.73);
+    -o-box-shadow: 0px 0px 5px 1px rgba(56, 56, 56, 0.73);
+    box-shadow: 0px 0px 5px 1px rgba(56, 56, 56, 0.73);
+}
+.mb {
+    margin-bottom: 20px;
+}
+
+/* Кнопка отправить */
+.view-send {
+    background: none;
+    position: fixed;
+    right: 24px;
+    top: 93%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+}
+.send {
+    border-radius: 40px;
+    width: 80px;
+    height: 80px;
+    text-align: center;
+    animation: appearance 2s ease-in infinite ;
+}
+.send:hover {
+    animation: none;
+    border: 2px solid rgb(31, 137, 141);
+}
+.send:focus {
+    outline: none;
+    animation: none;
+}
+.icon-send {
+    font-size: 45px;
+    margin-left: -5px;
+    animation: spin 0.9s ease-in infinite;
+    text-decoration: none;
+    color: black;
+}
+.icon-send:hover {
+    animation: none;
+}
+
+/* Модальное окно */
+.popup {
+    display: none;
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(37, 37, 37, 0.493);
+    z-index: 99;
+}
+.popup-content {
+    text-align: center;
+    position: fixed;
+    left: 50%;
+    top: 12%;
+    transform: translateX(-50%);
+    width: 35rem;
+    height: 49.5rem;
+    background-color: white;
+    padding-top: 5.5rem;
+}
+.popup-header {
+    color: rgb(35, 37, 37);
+    margin-top: -10px;
+}
+.main-form {
+    margin-top: 2.5rem;
+}
+.popup-text {
+    font-size: 20px;
+}
+.close {
+    position: absolute;
+    top: -1rem;
+    right: -2.5rem;
+    font-size: 50px;
+    color: black;
+    opacity: 1;
+}
+.close:hover, .close:focus, .close:active {
+    outline: none;
+    border: none;
+} 
+.close:hover {
+    animation: spin2 0.9s ease;
+}
+.close:active {
+    color: rgb(31, 137, 141);
+}
+.main-form-input {
+    width: 25rem;
+    height: 4rem;
+    border-radius: 10px;
+    border: 2px solid rgb(31, 137, 141);
+    outline: none;
+    text-align: center;
+}
+.main-form-textarea {
+    width: 25rem;
+    border-radius: 10px;
+    border: 2px solid rgb(31, 137, 141);
+    outline: none;
+    padding-top: 0.5rem;
+    text-align: center;
+    resize: none;
+}
+.main-form-input:focus, .main-form-textarea:focus {
+    border: 2px solid rgb(35, 37, 37);
+}
+label {
+    position: relative;
+    top: 1.2rem;
+    color: rgb(35, 37, 37);
+    background-color: white;
+    transition: 0.3s ease-in-out;
+}
+label:hover {
+    transform: scale(1.85);
+}
+.main-form-btn {
+    font-size: 24px;
+    width: 11rem;
+    height: 4rem;
+    margin-top: 4.5rem;
+}
+
+.content-tickets {
+    display: inline-flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.ticket {
+    position: relative;
+    overflow: hidden;
+    margin-left: 30px;
+    margin-right: 30px;
+    margin-bottom: 20px;
+}
+.ticket-text {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: -100vh;
+    bottom: 100vh;
+    background-color: rgba(37, 37, 37, 0.493);
+    transition: 0.5s ease-in-out;
+    z-index: -1;
+}
+.ticket-text > p {
+    font-size: 30px;
+    margin-top: 90%;
+    color: white;
+}
+.ticket-text > a {
+    font-size: 50px;
+    position: absolute;
+    top: 35%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    text-decoration: none;
+}
+.ticket-text > p:hover, a:hover {
+    color: rgb(43, 177, 182);
+}
+.ticket:hover > .ticket-text {
+    display: block;
+    top: 0;
+    bottom: 0;
+    transition: 0.6s ease-in-out;
+    z-index: 5;
+}
+
+.ft {
+  max-width: 100%;
+}
+
+.bg-footer {
+    background-color: rgb(35, 37, 37);
+    height: 50px;
+}
+.bg-footer > * {
+    color: white;
+    font-size: 15px;
+    position: relative;
+    top: 25%;
+    transform: translateY(-50%);
+}
+
+@keyframes spin {
+    from, to {
+        transform: rotate(40deg);
+    }
+    50% {
+        transform: rotate(-47deg);
+    }
+}
+
+@keyframes appearance {
+    from {
+        border-color: rgb(41, 195, 201);
+        box-shadow: 0px 1px 9px -1px rgb(25, 119, 122);
+    }
+    10% {
+        border-color: rgb(10, 160, 103);
+        box-shadow: 0px 1px 9px -1px rgb(7, 100, 64);
+    }
+    20% {
+        border-color: rgb(19, 123, 158);
+        box-shadow: 0px 1px 9px -1px rgb(13, 80, 102);
+    }
+    30% {
+        border-color: rgb(16, 136, 90);
+        box-shadow: 0px 1px 9px -1px rgb(9, 78, 52);
+    }
+    40% {
+        border-color: rgb(106, 155, 15);
+        box-shadow: 0px 1px 9px -1px rgb(62, 90, 9);
+    }
+    50% {
+        border-color: rgb(10, 128, 89);
+        box-shadow: 0px 1px 9px -1px rgb(6, 75, 52);
+    }
+    60% {
+        border-color: rgb(148, 135, 15);
+        box-shadow: 0px 1px 9px -1px rgb(83, 76, 8);
+    }
+    70% {
+        border-color: rgb(195, 197, 58);
+        box-shadow: 0px 1px 9px -1px rgb(104, 105, 31);
+    }
+    80% {
+        border-color: rgb(15, 112, 90);
+        box-shadow: 0px 1px 9px -1px rgb(9, 66, 53);
+    }
+    90% {
+        border-color: rgb(66, 66, 66);
+        box-shadow: 0px 1px 9px -1px rgb(27, 27, 27);
+    }
+    to {
+        border-color: rgb(41, 195, 201);
+        box-shadow: 0px 1px 9px -1px rgb(24, 117, 121);
+    }
+}
+
+@keyframes spin2 {
+    from {
+        transform: rotate(0deg);
+    }
+    20% {
+        transform: rotate(-80deg);
+    }
+    80% {
+        transform: rotate(440deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@media screen and (max-width: 1920px) {
+    .view-send {
+        background: none;
+        position: fixed;
+        right: 40px;
+        top: 90%;
+        transform: translate(-50%, -50%);
+    }
+    .send {
+        border-radius: 60px;
+        border: 2.3px solid rgb(41, 195, 201);
+        width: 120px;
+        height: 120px;
+        text-align: center;
+        animation: appearance 2s ease-in infinite ;
+    }
+    .send:hover {
+        animation: none;
+        border: 3px outset rgb(31, 137, 141);
+    }
+    .send:focus {
+        outline: none;
+    }
+    .icon-send {
+        font-size: 63px;
+        margin-left: -10px;
+        animation: spin 0.9s ease-in infinite;
+        text-decoration: none;
+        color: black;
+    }
+    .card > img:hover {
+        transform: scale(1.065);
+        -webkit-box-shadow: 0px 2px 9px -1px rgba(135,135,135,1);
+        -moz-box-shadow: 0px 2px 9px -1px rgba(135,135,135,1);
+        -ms-box-shadow: 0px 2px 9px -1px rgba(135,135,135,1);
+        -o-box-shadow: 0px 2px 9px -1px rgba(135,135,135,1);
+        box-shadow: 0px 2px 9px -1px rgba(135,135,135,1);
+    }
+}
+
+@media screen and (max-width: 1728px) {
+    .view-send {
+        background: none;
+        position: fixed;
+        right: 32px;
+        top: 89.5%;
+        transform: translate(-50%, -50%);
+    }
+    .send {
+        border-radius: 55px;
+        border: 2px solid rgb(41, 195, 201);
+        width: 110px;
+        height: 110px;
+        text-align: center;
+        animation: appearance 2s ease-in infinite ;
+    }
+    .send:focus {
+        outline: none;
+    }
+    .icon-send {
+        font-size: 57px;
+        margin-left: -8px;
+        animation: spin 0.9s ease-in infinite;
+        text-decoration: none;
+        color: black;
+    }
+    .card > img:hover {
+        transform: scale(1.072);
+        -webkit-box-shadow: 0px 2px 9px -1px rgba(135,135,135,1);
+        -moz-box-shadow: 0px 2px 9px -1px rgba(135,135,135,1);
+        -ms-box-shadow: 0px 2px 9px -1px rgba(135,135,135,1);
+        -o-box-shadow: 0px 2px 9px -1px rgba(135,135,135,1);
+        box-shadow: 0px 2px 9px -1px rgba(135,135,135,1);
+    }
+
+    .popup-content {
+        text-align: center;
+        position: fixed;
+        left: 50%;
+        top: 16%;
+        transform: translateX(-50%);
+        width: 32rem;
+        height: 44rem;
+        background-color: white;
+        padding-top: 4.7rem;
+    }
+    .popup-header {
+        color: rgb(35, 37, 37);
+        margin-top: -10px;
+        font-size: 25px;
+    }
+    .main-form {
+        margin-top: 1.7rem;
+    }
+    .popup-text {
+        font-size: 18px;
+    }
+    .close {
+        position: absolute;
+        top: -0.8rem;
+        right: -2.3rem;
+        font-size: 43px;
+        color: black;
+        opacity: 1;
+    }
+    .main-form-input {
+        width: 22rem;
+        height: 3.5rem;
+        border-radius: 10px;
+        border: 1.5px solid rgb(31, 137, 141);
+        outline: none;
+        text-align: center;
+    }
+    .main-form-textarea {
+        width: 22rem;
+        height: 7.5rem;
+        border-radius: 10px;
+        border: 1.5px solid rgb(31, 137, 141);
+        outline: none;
+        padding-top: 0.5rem;
+        text-align: center;
+        resize: none;
+    }
+    .main-form-input:focus, .main-form-textarea:focus {
+        border: 1.5px solid rgb(35, 37, 37);
+    }
+    label {
+        position: relative;
+        top: 1.2rem;
+        color: rgb(35, 37, 37);
+        background-color: white;
+        transition: 0.3s ease-in-out;
+        font-size: 15px;
+    }
+    label:hover {
+        transform: scale(1.65);
+    }
+    .main-form-btn {
+        font-size: 22px;
+        width: 9.5rem;
+        height: 3.5rem;
+        margin-top: 3.5rem;
+    }
+}
+
+@media screen and (max-width: 1600px) {
+    .view-send {
+        background: none;
+        position: fixed;
+        right: 32px;
+        top: 91%;
+        transform: translate(-50%, -50%);
+    }
+    .send {
+        border-radius: 50px;
+        border: 2px solid rgb(41, 195, 201);
+        width: 100px;
+        height: 100px;
+        text-align: center;
+        animation: appearance 2s ease-in infinite ;
+    }
+    .send:focus {
+        outline: none;
+    }
+    .icon-send {
+        font-size: 54px;
+        animation: spin 0.9s ease-in infinite;
+        text-decoration: none;
+        color: black;
+    }
+    .card > img:hover {
+        transform: scale(1.079);
+        -webkit-box-shadow: 0px 2px 9px -1px rgba(135,135,135,1);
+        -moz-box-shadow: 0px 2px 9px -1px rgba(135,135,135,1);
+        -ms-box-shadow: 0px 2px 9px -1px rgba(135,135,135,1);
+        -o-box-shadow: 0px 2px 9px -1px rgba(135,135,135,1);
+        box-shadow: 0px 2px 9px -1px rgba(135,135,135,1);
+    }
+
+    .popup-content {
+        text-align: center;
+        position: fixed;
+        left: 50%;
+        top: 12%;
+        transform: translateX(-50%);
+        width: 30rem;
+        height: 42rem;
+        background-color: white;
+        padding-top: 4.5rem;
+    }
+    .popup-header {
+        color: rgb(35, 37, 37);
+        margin-top: -10px;
+        font-size: 23.5px;
+    }
+    .main-form {
+        margin-top: 1.5rem;
+    }
+    .popup-text {
+        font-size: 17px;
+    }
+    .close {
+        position: absolute;
+        top: -0.7;
+        right: -2.1rem;
+        font-size: 40px;
+        color: black;
+        opacity: 1;
+    }
+    .main-form-input {
+        width: 20.5rem;
+        height: 3.3rem;
+        border-radius: 10px;
+        border: 1.4px solid rgb(31, 137, 141);
+        outline: none;
+        text-align: center;
+    }
+    .main-form-textarea {
+        width: 20.5rem;
+        height: 6.8rem;
+        border-radius: 10px;
+        border: 1.4px solid rgb(31, 137, 141);
+        outline: none;
+        padding-top: 0.5rem;
+        text-align: center;
+        resize: none;
+    }
+    .main-form-input:focus, .main-form-textarea:focus {
+        border: 1.4px solid rgb(35, 37, 37);
+    }
+    label {
+        position: relative;
+        top: 1.2rem;
+        color: rgb(35, 37, 37);
+        background-color: white;
+        transition: 0.3s ease-in-out;
+        font-size: 15px;
+    }
+    label:hover {
+        transform: scale(1.50);
+    }
+    .main-form-btn {
+        font-size: 21px;
+        width: 9.2rem;
+        height: 3.2rem;
+        margin-top: 3.5rem;
+    }
+}
+
+@media screen and (max-width: 1440px) {
+    .view-send {
+        background: none;
+        position: fixed;
+        right: 27px;
+        top: 90.5%;
+        transform: translate(-50%, -50%);
+    }
+    .send {
+        border-radius: 45px;
+        border: 2px solid rgb(41, 195, 201);
+        width: 90px;
+        height: 90px;
+        text-align: center;
+        animation: appearance 2s ease-in infinite ;
+    }
+    .send:hover {
+        animation: none;
+        border: 2.5px outset rgb(31, 137, 141);
+    }
+    .send:focus {
+        outline: none;
+    }
+    .icon-send {
+        font-size: 48px;
+        margin-left: -5px;
+        animation: spin 0.9s ease-in infinite;
+        text-decoration: none;
+        color: black;
+    }
+    .card > img:hover {
+        transform: scale(1.089);
+        -webkit-box-shadow: 0px 2px 9px -1px rgba(135,135,135,1);
+        -moz-box-shadow: 0px 2px 9px -1px rgba(135,135,135,1);
+        -ms-box-shadow: 0px 2px 9px -1px rgba(135,135,135,1);
+        -o-box-shadow: 0px 2px 9px -1px rgba(135,135,135,1);
+        box-shadow: 0px 2px 9px -1px rgba(135,135,135,1);
+    }
+
+    .popup-content {
+        text-align: center;
+        position: fixed;
+        left: 50%;
+        top: 14.5%;
+        transform: translateX(-50%);
+        width: 27rem;
+        height: 36.5rem;
+        background-color: white;
+        padding-top: 4rem;
+    }
+    .popup-header {
+        color: rgb(35, 37, 37);
+        margin-top: -15px;
+        font-size: 21px;
+    }
+    .main-form {
+        margin-top: 1rem;
+    }
+    .popup-text {
+        font-size: 16px;
+    }
+    .close {
+        position: absolute;
+        top: -0.6rem;
+        right: -1.8rem;
+        font-size: 35px;
+        color: black;
+        opacity: 1;
+    }
+    .main-form-input {
+        width: 18.5rem;
+        height: 2.8rem;
+        border-radius: 10px;
+        border: 1.2px solid rgb(31, 137, 141);
+        outline: none;
+        text-align: center;
+    }
+    .main-form-textarea {
+        width: 18.5rem;
+        height: 6.4rem;
+        border-radius: 10px;
+        border: 1.2px solid rgb(31, 137, 141);
+        outline: none;
+        padding-top: 0.5rem;
+        text-align: center;
+        resize: none;
+    }
+    .main-form-input:focus, .main-form-textarea:focus {
+        border: 1.2px solid rgb(35, 37, 37);
+    }
+    label {
+        position: relative;
+        top: 1.150rem;
+        color: rgb(35, 37, 37);
+        background-color: white;
+        transition: 0.3s ease-in-out;
+        font-size: 13.5px;
+    }
+    label:hover {
+        transform: scale(1.30);
+    }
+    .main-form-btn {
+        font-size: 19px;
+        width: 8.3rem;
+        height: 2.8rem;
+        margin-top: 3rem;
+    }
+
+    .ticket-text > p {
+        margin-top: 105%;
+    }
+}
+
+@media screen and (max-width: 1280px) {
+    .view-send {
+        background: none;
+        position: fixed;
+        right: 21px;
+        top: 91.5%;
+        transform: translate(-50%, -50%);
+    }
+    .send {
+        border-radius: 45px;
+        border: 2px solid rgb(41, 195, 201);
+        width: 85px;
+        height: 85px;
+        text-align: center;
+        animation: appearance 2s ease-in infinite ;
+    }
+    .send:hover {
+        animation: none;
+        border: 2px outset rgb(31, 137, 141);
+    }
+    .send:focus {
+        outline: none;
+    }
+    .icon-send {
+        font-size: 45px;
+        margin-left: -5px;
+        animation: spin 0.9s ease-in infinite;
+        text-decoration: none;
+        color: black;
+    }
+    .card > img:hover {
+        transform: scale(1.1);
+        -webkit-box-shadow: 0px 2px 9px -1px rgba(135,135,135,1);
+        -moz-box-shadow: 0px 2px 9px -1px rgba(135,135,135,1);
+        -ms-box-shadow: 0px 2px 9px -1px rgba(135,135,135,1);
+        -o-box-shadow: 0px 2px 9px -1px rgba(135,135,135,1);
+        box-shadow: 0px 2px 9px -1px rgba(135,135,135,1);
+    }
+
+    .popup-content {
+        text-align: center;
+        position: fixed;
+        left: 50%;
+        top: 16%;
+        transform: translateX(-50%);
+        width: 23rem;
+        height: 33rem;
+        background-color: white;
+        padding-top: 3.8rem;
+    }
+    .popup-header {
+        color: rgb(35, 37, 37);
+        margin-top: -15px;
+        font-size: 19px;
+    }
+    .main-form {
+        margin-top: -0.7rem;
+    }
+    .popup-text {
+        font-size: 15px;
+    }
+    .close {
+        position: absolute;
+        top: -0.6rem;
+        right: -1.5rem;
+        font-size: 30px;
+        color: black;
+        opacity: 1;
+    }
+    .main-form-input {
+        width: 16.5rem;
+        height: 2.5rem;
+        border-radius: 10px;
+        border: 1px solid rgb(31, 137, 141);
+        outline: none;
+        text-align: center;
+    }
+    .main-form-textarea {
+        width: 16.5rem;
+        height: 6.1rem;
+        border-radius: 10px;
+        border: 1px solid rgb(31, 137, 141);
+        outline: none;
+        padding-top: 0.5rem;
+        text-align: center;
+        resize: none;
+    }
+    .main-form-input:focus, .main-form-textarea:focus {
+        border: 1px solid rgb(35, 37, 37);
+    }
+    label {
+        position: relative;
+        top: 1rem;
+        color: rgb(35, 37, 37);
+        background-color: white;
+        transition: 0.3s ease-in-out;
+        font-size: 12px;
+    }
+    label:hover {
+        transform: scale(1.30);
+    }
+    .main-form-btn {
+        font-size: 18px;
+        width: 8rem;
+        height: 2.5rem;
+        margin-top: 2.2rem;
+    }
+}
+
+@media screen and (max-width: 1164px) {
+    .view-send {
+        background: none;
+        position: fixed;
+        right: 25px;
+        top: 92%;
+        transform: translate(-50%, -50%);
+    }
+    .send {
+        border-radius: 35px;
+        border: 2px solid rgb(41, 195, 201);
+        width: 70px;
+        height: 70px;
+        text-align: center;
+        animation: appearance 2s ease-in infinite ;
+    }
+    .send:focus {
+        outline: none;
+    }
+    .icon-send {
+        font-size: 36px;
+        margin-left: -5px;
+        animation: spin 0.9s ease-in infinite;
+        text-decoration: none;
+        color: black;
+    }
+    .card > img:hover {
+        transform: scale(1.115);
+        -webkit-box-shadow: 0px 2px 9px -1px rgba(135,135,135,1);
+        -moz-box-shadow: 0px 2px 9px -1px rgba(135,135,135,1);
+        -ms-box-shadow: 0px 2px 9px -1px rgba(135,135,135,1);
+        -o-box-shadow: 0px 2px 9px -1px rgba(135,135,135,1);
+        box-shadow: 0px 2px 9px -1px rgba(135,135,135,1);
+    }
+
+    .ticket {
+        margin-bottom: 30px;
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .view-send {
+        background: none;
+        position: fixed;
+        right: 15px;
+        top: 92.5%;
+        transform: translate(-50%, -50%);
+    }
+    .send {
+        border-radius: 35px;
+        border: 1.7px solid rgb(41, 195, 201);
+        width: 70px;
+        height: 70px;
+        text-align: center;
+        animation: appearance 2s ease-in infinite ;
+    }
+    .send:hover {
+        animation: none;
+        border: 1.7px outset rgb(31, 137, 141);
+    }
+    .send:focus {
+        outline: none;
+    }
+    .icon-send {
+        font-size: 36px;
+        margin-left: -5px;
+        animation: spin 0.9s ease-in infinite;
+        text-decoration: none;
+        color: black;
+    }
+    .card > img:hover {
+        transform: scale(1.139);
+        -webkit-box-shadow: 0px 2px 9px -1px rgba(135,135,135,1);
+        -moz-box-shadow: 0px 2px 9px -1px rgba(135,135,135,1);
+        -ms-box-shadow: 0px 2px 9px -1px rgba(135,135,135,1);
+        -o-box-shadow: 0px 2px 9px -1px rgba(135,135,135,1);
+        box-shadow: 0px 2px 9px -1px rgba(135,135,135,1);
+    }
+}
+
+@media screen and (max-width: 854px) {
+    .view-send {
+        background: none;
+        position: fixed;
+        right: 5px;
+        top: 91%;
+        transform: translate(-50%, -50%);
+    }
+    .send {
+        border-radius: 37.5px;
+        border: 1.7px solid rgb(41, 195, 201);
+        width: 75px;
+        height: 75px;
+        text-align: center;
+        animation: appearance 2s ease-in infinite ;
+    }
+    .send:hover {
+        animation: none;
+        border: 1.5px outset rgb(31, 137, 141);
+    }
+    .send:focus {
+        outline: none;
+    }
+    .icon-send {
+        font-size: 40px;
+        margin-left: -5px;
+        animation: spin 0.9s ease-in infinite;
+        text-decoration: none;
+        color: black;
+    }
+    .card > img:hover {
+        transform: scale(1.105);
+        -webkit-box-shadow: 0px 2px 9px -1px rgba(135,135,135,1);
+        -moz-box-shadow: 0px 2px 9px -1px rgba(135,135,135,1);
+        -ms-box-shadow: 0px 2px 9px -1px rgba(135,135,135,1);
+        -o-box-shadow: 0px 2px 9px -1px rgba(135,135,135,1);
+        box-shadow: 0px 2px 9px -1px rgba(135,135,135,1);
+    }
+}
+@media screen and (max-width: 768px) {
+    .view-send {
+        background: none;
+        position: fixed;
+        right: 12px;
+        top: 91%;
+        transform: translate(-50%, -50%);
+    }
+    .send {
+        border-radius: 30px;
+        border: 1.7px solid rgb(41, 195, 201);
+        width: 60px;
+        height: 60px;
+        text-align: center;
+        animation: appearance 2s ease-in infinite ;
+    }
+    .send:focus {
+        outline: none;
+    }
+    .icon-send {
+        font-size: 30px;
+        margin-left: -5px;
+        animation: spin 0.9s ease-in infinite;
+        text-decoration: none;
+        color: black;
+    }
+    .card > img:hover {
+        transform: scale(1.120);
+        -webkit-box-shadow: 0px 2px 9px -1px rgba(135,135,135,1);
+        -moz-box-shadow: 0px 2px 9px -1px rgba(135,135,135,1);
+        -ms-box-shadow: 0px 2px 9px -1px rgba(135,135,135,1);
+        -o-box-shadow: 0px 2px 9px -1px rgba(135,135,135,1);
+        box-shadow: 0px 2px 9px -1px rgba(135,135,135,1);
+    }
+}
+
+@media screen and (max-width: 720px) {
+    .view-send {
+        background: none;
+        position: fixed;
+        right: 12.5px;
+        top: 92%;
+        transform: translate(-50%, -50%);
+    }
+    .send {
+        border-radius: 25px;
+        border: 1.7px solid rgb(41, 195, 201);
+        width: 50px;
+        height: 50px;
+        text-align: center;
+        animation: appearance 2s ease-in infinite ;
+    }
+    .send:focus {
+        outline: none;
+    }
+    .icon-send {
+        font-size: 26px;
+        margin-left: -4px;
+        animation: spin 0.9s ease-in infinite;
+        text-decoration: none;
+        color: black;
+    }
+    .card > img:hover {
+        transform: scale(1.145);
+        -webkit-box-shadow: 0px 2px 9px -1px rgba(135,135,135,1);
+        -moz-box-shadow: 0px 2px 9px -1px rgba(135,135,135,1);
+        -ms-box-shadow: 0px 2px 9px -1px rgba(135,135,135,1);
+        -o-box-shadow: 0px 2px 9px -1px rgba(135,135,135,1);
+        box-shadow: 0px 2px 9px -1px rgba(135,135,135,1);
+    }
+}
+
+@media screen and (max-width: 560px) {
+    .view-send {
+        background: none;
+        position: fixed;
+        right: 0px;
+        top: 91%;
+        transform: translate(-50%, -50%);
+    }
+    .send {
+        border-radius: 22.5px;
+        border: 1.7px solid rgb(41, 195, 201);
+        width: 45px;
+        height: 45px;
+        text-align: center;
+        animation: appearance 2s ease-in infinite ;
+    }
+    .send:hover {
+        animation: none;
+        border: 1.5px outset rgb(31, 137, 141);
+    }
+    .send:focus {
+        outline: none;
+    }
+    .icon-send {
+        font-size: 24px;
+        margin-left: -3px;
+        animation: spin 0.9s ease-in infinite;
+        text-decoration: none;
+        color: black;
+    }
+    .card > img:hover {
+        transform: scale(1.075);
+        -webkit-box-shadow: 0px 2px 9px -1px rgba(135,135,135,1);
+        -moz-box-shadow: 0px 2px 9px -1px rgba(135,135,135,1);
+        -ms-box-shadow: 0px 2px 9px -1px rgba(135,135,135,1);
+        -o-box-shadow: 0px 2px 9px -1px rgba(135,135,135,1);
+        box-shadow: 0px 2px 9px -1px rgba(135,135,135,1);
+    }
+}
+
+@media screen and (max-width: 475px) {
+    .view-send {
+        background: none;
+        position: fixed;
+        right: 14px;
+        top: 92%;
+        transform: translate(-50%, -50%);
+    }
+    .send {
+        border-radius: 18px;
+        border: 1.5px solid rgb(41, 195, 201);
+        width: 36px;
+        height: 36px;
+        text-align: center;
+        animation: appearance 2s ease-in infinite ;
+    }
+    .send:hover {
+        animation: none;
+        border: 1.2px outset rgb(31, 137, 141);
+    }
+    .send:focus {
+        outline: none;
+    }
+    .icon-send {
+        font-size: 19px;
+        margin-left: -2.5px;
+        animation: spin 0.9s ease-in infinite;
+        text-decoration: none;
+        color: black;
+    }
+    .card > img:hover {
+        transform: scale(1.095);
+        -webkit-box-shadow: 0px 2px 9px -1px rgba(135,135,135,1);
+        -moz-box-shadow: 0px 2px 9px -1px rgba(135,135,135,1);
+        -ms-box-shadow: 0px 2px 9px -1px rgba(135,135,135,1);
+        -o-box-shadow: 0px 2px 9px -1px rgba(135,135,135,1);
+        box-shadow: 0px 2px 9px -1px rgba(135,135,135,1);
+    }
+}
+
+@media screen and (max-width: 360px) {
+    .view-send {
+        background: none;
+        position: fixed;
+        right: 4px;
+        top: 90%;
+        transform: translate(-50%, -50%);
+    }
+    .send {
+        border-radius: 15px;
+        border: 1.7px solid rgb(41, 195, 201);
+        width: 30px;
+        height: 30px;
+        text-align: center;
+        animation: appearance 2s ease-in infinite ;
+    }
+    .send:focus {
+        outline: none;
+    }
+    .icon-send {
+        font-size: 15px;
+        margin-top: -1px;
+        margin-left: -2.5px;
+        animation: spin 0.9s ease-in infinite;
+        text-decoration: none;
+        color: black;
+    }
+}
+
+@media screen and (max-width: 320px) {
+    .card > img:hover {
+        transform: scale(1.175);
+        -webkit-box-shadow: 0px 2px 9px -1px rgba(135,135,135,1);
+        -moz-box-shadow: 0px 2px 9px -1px rgba(135,135,135,1);
+        -ms-box-shadow: 0px 2px 9px -1px rgba(135,135,135,1);
+        -o-box-shadow: 0px 2px 9px -1px rgba(135,135,135,1);
+        box-shadow: 0px 2px 9px -1px rgba(135,135,135,1);
+    }
+
+    .card {
+        display: inline-flex;
+        margin-bottom: 15px;
+        margin-left: 0;
+        margin-right: 0;
+    }
+}
+
+@media (min-width: 320px) and (max-width: 767px) {
+    body::-webkit-scrollbar {
+        width: 5px;
+    }
+    body::-webkit-scrollbar-track {
+        background-color: white;
+    }
+    body::-webkit-scrollbar-thumb {
+        background-color: white;
+        border-radius: 20px;
+        border: 1px solid rgb(35, 37, 37);
+    }
+    body::-webkit-scrollbar-thumb:hover {
+        border: 1px solid rgb(29, 170, 175);
+    }
+    .other {
+        border: none;
+        color: black;
+        position: relative;
+        transition: 0.7s;
+        overflow: hidden;
+    }
+    .other::before, 
+    .other::after {
+        position: absolute;
+        content: '';
+        width: 100%;
+        height: 100%;
+        opacity: 0.5;
+        background-color: rgba(38, 46, 46, 0.8);
+        left: -100%;
+        top: 0;
+        transition: 0.2s ease-in-out;
+        z-index: -1;
+    }
+    .other::after {
+        opacity: 1;
+        transition-delay: 0.2s;
+    }
+    .other:hover {
+        color: white;
+        background: none;
+        border: none; 
+        z-index: 1;
+    }
+    .other:hover::before,
+    .other:hover::after {
+        left: 0;
+    }
+
+    .card {
+        display: inline-flex;
+        margin-bottom: 15px;
+        margin-left: 0;
+        margin-right: 0;
+    }
+}
